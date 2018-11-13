@@ -6,6 +6,18 @@ public class Livingthing {
     int attack;
     boolean dead;
 
+    public boolean getdead(){
+        return this.dead;
+    }
+    public void setdead(boolean n){
+        this.dead = n;
+    }
+    public int getHitPoint(){
+        return this.hitPoint;
+    }
+
+
+
     public Livingthing(String name, int maximumHP, int attack) {
         this.name = name;
         hitPoint = maximumHP;
@@ -34,7 +46,7 @@ public class Livingthing {
         hitPoint -= damage;
         if (hitPoint < 0) {
             dead = true;
-            System.out.printf("モンスター%sは倒れた。\n", name);
+            System.out.printf("%sは倒れた。\n", name);
         }
     }
 }

@@ -8,7 +8,16 @@ public class Hero extends Livingthing{
      * @param maximumHP モンスターのHP
      * @param attack モンスターの攻撃力
      */
-    public Hero (String name, int maximumHP, int attack) {
-        super(name,maximumHP,attack);
+    public Hero (String name, int hitPoint, int attack) {
+        super(name,hitPoint,attack);
     }
+    @Override
+    public void wounded(int damage) {
+        hitPoint -= damage;
+        if (hitPoint < 0) {
+            dead = true;
+            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
+        }
+    }
+
 }
